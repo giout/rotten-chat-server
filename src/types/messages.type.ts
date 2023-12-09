@@ -1,7 +1,6 @@
 export interface Message {
     content: string,
-    firstName: string,
-    lastName: string,
-    isCritic: boolean,
+    userId: number,
+    roomId: number,
     date: string
 }
