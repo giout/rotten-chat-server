@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS chat.messages (
     message_date TIMESTAMP NOT NULL DEFAULT NOW(),
     room_id INTEGER NOT NULL,
     PRIMARY KEY (message_id),
-    FOREIGN KEY (user_id) REFERENCES rotten.users (user_id)
+    FOREIGN KEY (user_id) REFERENCES rotten.users (user_id),
     FOREIGN KEY (room_id) REFERENCES chat.rooms (room_id)
 );
 
