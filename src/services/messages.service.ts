@@ -4,8 +4,8 @@ import queries from "../queries/messages.query"
 
 export const insertMessage = async (entry: Message) => {
     const sentence = queries.insert
-    const { userId, roomId, content } = entry
-    const message = await pool.query(sentence, [content, userId, roomId]) 
+    const { userId, roomId, content, firstName, lastName, isCritic } = entry
+    const message = await pool.query(sentence, [content, userId, roomId, firstName, lastName, isCritic]) 
     return {
         content: message.rows[0].message_content,
         userId: message.rows[0].user_id,

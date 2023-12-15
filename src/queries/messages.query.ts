@@ -6,7 +6,7 @@ const queries = {
             room: `SELECT * FROM ${table} WHERE room_id=$1 ORDER BY message_date DESC`
         }
     },
-    insert: `INSERT INTO ${table} (message_content, user_id, room_id) VALUES ($1, $2, $3) RETURNING *`
+    insert: `INSERT INTO ${table} (message_content, user_id, room_id, user_first_name, user_last_name, user_is_critic) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`
 }
 
 export default queries
