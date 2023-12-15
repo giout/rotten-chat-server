@@ -23,7 +23,10 @@ const insertMessage = (entry) => __awaiter(void 0, void 0, void 0, function* () 
         content: message.rows[0].message_content,
         userId: message.rows[0].user_id,
         roomId: message.rows[0].room_id,
-        date: message.rows[0].message_date
+        date: message.rows[0].message_date,
+        firstName: message.rows[0].user_first_name,
+        lastName: message.rows[0].user_last_name,
+        isCritic: message.rows[0].user_is_critic
     };
 });
 exports.insertMessage = insertMessage;
@@ -36,7 +39,10 @@ const selectMessagesByRoom = (roomId) => __awaiter(void 0, void 0, void 0, funct
             content: message.message_content,
             userId: message.user_id,
             roomId: message.room_id,
-            date: message.message_date
+            date: message.message_date,
+            firstName: message.user_first_name,
+            lastName: message.user_last_name,
+            isCritic: message.user_is_critic
         });
     });
     return response;
