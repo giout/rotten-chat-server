@@ -17,8 +17,8 @@ const database_1 = __importDefault(require("../config/database"));
 const messages_query_1 = __importDefault(require("../queries/messages.query"));
 const insertMessage = (entry) => __awaiter(void 0, void 0, void 0, function* () {
     const sentence = messages_query_1.default.insert;
-    const { userId, roomId, content } = entry;
-    const message = yield database_1.default.query(sentence, [content, userId, roomId]);
+    const { userId, roomId, content, firstName, lastName, isCritic } = entry;
+    const message = yield database_1.default.query(sentence, [content, userId, roomId, firstName, lastName, isCritic]);
     return {
         content: message.rows[0].message_content,
         userId: message.rows[0].user_id,
